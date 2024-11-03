@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="%PUBLIC_URL%/SpendWellLogo.ico" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="theme-color" content="#000000" />
+	<meta name="description" content="Spend Well - Budget Management System" />
+	<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+	<!-- Google Fonts  -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&family=Sevillana&display=swap"
+		rel="stylesheet">
+
+	<title>Spend Well - Budget Management System</title>
+</head>
+
+<body>
+	<div id="root" style="margin-bottom: 100px;"></div>
+
+	<!-- Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+
+	<!-- Font Awesome Kit JS -->
+	<script src="https://kit.fontawesome.com/7e8663fe81.js" crossorigin="anonymous"></script>
+
+	<!-- HTML to PDF -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+
+	<!-- jQuery Script -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+	<script>
+		if (
+			window.location.pathname.substr(-1) === "/" &&
+			window.location.pathname.length > 1
+		) {
+			window.location.replace(
+				window.location.pathname.slice(0, -1) +
+				window.location.search +
+				window.location.hash
+			);
+		}
+
+		$(document).ready(function () {
+			$('#generateStatement').click(function () {
+				console.log("Hello World !!");
+				const statistics = document.getElementById("statisticsSection").innerHTML;
+				const invoice = document.getElementById("allTransactions").innerHTML;
+
+				let date = new Date();
+				const fileName = JSON.parse(sessionStorage.getItem("user")).username + "_" + date.getDate() + "_" + date.getMonth() + "_" + date.getFullYear() + "_Statement";
+
+				var opt = {
+					margin: 25,
+					filename: `${fileName}.pdf`,
+					image: { type: 'png', quality: 1 },
+					html2canvas: { scale: 1 },
+					jsPDF: { unit: 'px', format: 'Ledger', orientation: 'landscape', hotfixes: ["px_scaling"] }
+				};
+				html2pdf().from(name + statistics + invoice).set(opt).save();
+
+			});
+		});
+
+	</script>
+</body>
+
+</html>

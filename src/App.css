@@ -1,0 +1,12 @@
+body{
+  background-image: url("./Images/background_t_30.png");
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+#root{
+  padding-bottom: 10px;
+}
