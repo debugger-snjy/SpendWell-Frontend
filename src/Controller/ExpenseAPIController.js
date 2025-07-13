@@ -2,7 +2,7 @@
 
 export const addNewExpenseRecord = async (data) => {
     console.log("Yes !!")
-    const addExpenseAPI = await fetch(`http://localhost:5000/api/expense/add`, {
+    const addExpenseAPI = await fetch(`${process.env.REACT_APP_BACKEND_URL}/expense/add`, {
         method: "POST",
 
         headers: {
@@ -24,7 +24,7 @@ export const addNewExpenseRecord = async (data) => {
 
 export const deleteExpense = async (id, token) => {
 
-    const response = await fetch(`http://localhost:5000/api/expense/delete/${id}`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/expense/delete/${id}`, {
         method: "DELETE",
 
         headers: {
@@ -42,7 +42,7 @@ export const deleteExpense = async (id, token) => {
 }
 
 export const fetchCategoryExpense = async (categoryId) => {
-    const fetchCategoryExpenses = await fetch(`http://localhost:5000/api/expense/fetch/category/${categoryId}`, {
+    const fetchCategoryExpenses = await fetch(`${process.env.REACT_APP_BACKEND_URL}/expense/fetch/category/${categoryId}`, {
         method: "GET",
 
         headers: {
@@ -61,7 +61,7 @@ export const fetchCategoryExpense = async (categoryId) => {
 }
 
 export const fetchAccountExpense = async (accountId) => {
-    const fetchAccountExpenses = await fetch(`http://localhost:5000/api/expense/fetch/account/${accountId}`, {
+    const fetchAccountExpenses = await fetch(`${process.env.REACT_APP_BACKEND_URL}/expense/fetch/account/${accountId}`, {
         method: "GET",
 
         headers: {
@@ -81,7 +81,7 @@ export const fetchAccountExpense = async (accountId) => {
 
 export const editExpenseRecord = async (id, data) => {
     console.log("Yes !!")
-    const editExpenseAPI = await fetch(`http://localhost:5000/api/expense/update/${id}`, {
+    const editExpenseAPI = await fetch(`${process.env.REACT_APP_BACKEND_URL}/expense/update/${id}`, {
         method: "PUT",
 
         headers: {

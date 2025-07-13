@@ -3,7 +3,7 @@ export const getInfoAPI = async (token) => {
 
     // API Call to fetch user data :
     // Adding the API Call to fetch the user from the Database
-    const response = await fetch(`http://localhost:5000/api/auth/getuser`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/auth/getuser`, {
         method: "POST",
 
         headers: {
@@ -27,7 +27,7 @@ export const loginAPI = async (useremail, userpassword) => {
     try {
         // API Call to fetch user data :
         // Adding the API Call to fetch the user from the Database
-        const response = await fetch(`http://localhost:5000/api/auth/login`, {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/auth/login`, {
             method: "POST", // As fetchallnotes is a GET method
 
             headers: {
@@ -61,7 +61,7 @@ export const signUpAPI = async (userEmail, userPassword, userName, userPhone, us
 
     // API Call to fetch user data :
     // Adding the API Call to fetch the user from the Database
-    const signUpAPI = await fetch(`http://localhost:5000/api/auth/createuser`, {
+    const signUpAPI = await fetch(`${process.env.REACT_APP_BACKEND_URL}/auth/createuser`, {
         method: "POST", // As fetchallnotes is a GET method
 
         headers: {
@@ -86,7 +86,7 @@ export const getUsersAPI = async (token) => {
 
     // API Call to fetch user data :
     // Adding the API Call to fetch the user from the Database
-    const getUsersAPI = await fetch(`http://localhost:5000/api/auth/fetch/users/all`, {
+    const getUsersAPI = await fetch(`${process.env.REACT_APP_BACKEND_URL}/auth/fetch/users/all`, {
         method: "GET", // As fetchallnotes is a GET method
 
         headers: {
@@ -107,7 +107,7 @@ export const deleteUser = async (token, id) => {
 
     // API Call to fetch user data :
     // Adding the API Call to fetch the user from the Database
-    const deleteUsersAPI = await fetch(`http://localhost:5000/api/auth/delete/user/${id}`, {
+    const deleteUsersAPI = await fetch(`${process.env.REACT_APP_BACKEND_URL}/auth/delete/user/${id}`, {
         method: "DELETE", // As fetchallnotes is a GET method
 
         headers: {
@@ -131,7 +131,7 @@ export const editUserAPI = async (token, id, updatedData) => {
 
     // API Call to fetch user data :
     // Adding the API Call to fetch the user from the Database
-    const editUsersAPI = await fetch(`http://localhost:5000/api/auth/update/user/${id}`, {
+    const editUsersAPI = await fetch(`${process.env.REACT_APP_BACKEND_URL}/auth/update/user/${id}`, {
         method: "PUT", // As fetchallnotes is a GET method
 
         headers: {

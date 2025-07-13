@@ -1,13 +1,12 @@
 // This File will contain the Function that make API Calls regarding Accounts Records
-
 export const addNewAccountRecord = async (data) => {
     console.log("Yes !!")
-    const addAccountAPI = await fetch(`http://localhost:5000/api/account/add`, {
+    const addAccountAPI = await fetch(`${process.env.REACT_APP_BACKEND_URL}/account/add`, {
         method: "POST",
 
         headers: {
             "Content-Type": "application/json",
-            "auth-token":sessionStorage.getItem("token")
+            "auth-token": sessionStorage.getItem("token")
         },
 
         body: JSON.stringify(data)
@@ -26,7 +25,7 @@ export const getAccountBalanceSumUp = async (token) => {
 
     // API Call to fetch user data :
     // Adding the API Call to fetch the user from the Database
-    const response = await fetch(`http://localhost:5000/api/account/fetch/stats`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/account/fetch/stats`, {
         method: "GET",
 
         headers: {
@@ -49,7 +48,7 @@ export const getAllAccounts = async (token) => {
 
     // API Call to fetch user data :
     // Adding the API Call to fetch the user from the Database
-    const response = await fetch(`http://localhost:5000/api/account/fetch`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/account/fetch`, {
         method: "GET",
 
         headers: {
@@ -71,7 +70,7 @@ export const getAllTransactions = async (token) => {
 
     // API Call to fetch user data :
     // Adding the API Call to fetch the user from the Database
-    const response = await fetch(`http://localhost:5000/api/account/fetch/transactions/all`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/account/fetch/transactions/all`, {
         method: "GET",
 
         headers: {
@@ -92,7 +91,7 @@ export const getAllTransactions = async (token) => {
 export const deleteAccount = async (id, token) => {
     // API Call to fetch user data :
     // Adding the API Call to fetch the user from the Database
-    const response = await fetch(`http://localhost:5000/api/account/delete/${id}`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/account/delete/${id}`, {
         method: "DELETE",
 
         headers: {
@@ -110,9 +109,9 @@ export const deleteAccount = async (id, token) => {
     return deleteAccountResponse
 }
 
-export const editAccount = async (id, data,token) => {
+export const editAccount = async (id, data, token) => {
     console.log("Yes !!")
-    const editAccountAPI = await fetch(`http://localhost:5000/api/account/update/${id}`, {
+    const editAccountAPI = await fetch(`${process.env.REACT_APP_BACKEND_URL}/account/update/${id}`, {
         method: "PUT",
 
         headers: {

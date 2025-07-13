@@ -2,7 +2,7 @@
 
 export const addNewCategoryRecord = async (data) => {
     console.log("Yes !!")
-    const addCategoryAPI = await fetch(`http://localhost:5000/api/category/add`, {
+    const addCategoryAPI = await fetch(`${process.env.REACT_APP_BACKEND_URL}/category/add`, {
         method: "POST",
 
         headers: {
@@ -25,7 +25,7 @@ export const addNewCategoryRecord = async (data) => {
 export const getAllCategories = async (token) => {
     // API Call to fetch user data :
     // Adding the API Call to fetch the user from the Database
-    const response = await fetch(`http://localhost:5000/api/category/fetch`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/category/fetch`, {
         method: "GET",
 
         headers: {
@@ -46,7 +46,7 @@ export const getAllCategories = async (token) => {
 export const deleteCategory = async (id, token) => {
     // API Call to fetch user data :
     // Adding the API Call to fetch the user from the Database
-    const response = await fetch(`http://localhost:5000/api/category/delete/${id}`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/category/delete/${id}`, {
         method: "DELETE",
 
         headers: {
@@ -66,7 +66,7 @@ export const deleteCategory = async (id, token) => {
 
 export const editCategory = async (id, data,token) => {
     console.log("Yes !!")
-    const editCategoryAPI = await fetch(`http://localhost:5000/api/category/update/${id}`, {
+    const editCategoryAPI = await fetch(`${process.env.REACT_APP_BACKEND_URL}/category/update/${id}`, {
         method: "PUT",
 
         headers: {

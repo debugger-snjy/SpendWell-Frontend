@@ -37,35 +37,35 @@ export default function Navbar() {
                             (sessionStorage.getItem("token") && sessionStorage.getItem("user")) ?
                                 <>
                                     <li className="nav-item px-lg-2 px-md-1 px-0">
-                                        <Link className="nav-link text-black fw-semibold" aria-current="page" to={"http://localhost:3000/dashboard/" + sessionStorage.getItem("role").toLowerCase()}>Home</Link>
+                                        <Link className="nav-link text-black fw-semibold" aria-current="page" to={"./dashboard/" + sessionStorage.getItem("role").toLowerCase()}>Home</Link>
                                     </li>
                                     {
                                         sessionStorage.getItem("role").toLowerCase() === "customer" ?
                                             <>
                                                 <li className="nav-item px-lg-2 px-md-1 px-0">
-                                                    <Link className="nav-link text-black fw-semibold" aria-current="page" to={"http://localhost:3000/dashboard/" + sessionStorage.getItem("role").toLowerCase() + "/accounts"}>Accounts</Link>
+                                                    <Link className="nav-link text-black fw-semibold" aria-current="page" to={"./dashboard/" + sessionStorage.getItem("role").toLowerCase() + "/accounts"}>Accounts</Link>
                                                 </li>
                                                 <li className="nav-item px-lg-2 px-md-1 px-0">
-                                                    <Link className="nav-link text-black fw-semibold" aria-current="page" to={"http://localhost:3000/dashboard/" + sessionStorage.getItem("role").toLowerCase() + "/categories"}>Categories</Link>
+                                                    <Link className="nav-link text-black fw-semibold" aria-current="page" to={"./dashboard/" + sessionStorage.getItem("role").toLowerCase() + "/categories"}>Categories</Link>
                                                 </li>
                                                 <li className="nav-item px-lg-2 px-md-1 px-0">
-                                                    <Link className="nav-link text-black fw-semibold" aria-current="page" to={"http://localhost:3000/dashboard/" + sessionStorage.getItem("role").toLowerCase() + "/incomes"}>Incomes</Link>
+                                                    <Link className="nav-link text-black fw-semibold" aria-current="page" to={"./dashboard/" + sessionStorage.getItem("role").toLowerCase() + "/incomes"}>Incomes</Link>
                                                 </li>
                                                 <li className="nav-item px-lg-2 px-md-1 px-0">
-                                                    <Link className="nav-link text-black fw-semibold" aria-current="page" to={"http://localhost:3000/dashboard/" + sessionStorage.getItem("role").toLowerCase() + "/expenses"}>Expenses</Link>
+                                                    <Link className="nav-link text-black fw-semibold" aria-current="page" to={"./dashboard/" + sessionStorage.getItem("role").toLowerCase() + "/expenses"}>Expenses</Link>
                                                 </li>
                                             </> :
                                             <>
                                                 <li className="nav-item px-lg-2 px-md-1 px-0">
-                                                    <Link className="nav-link text-black fw-semibold" aria-current="page" to={"http://localhost:3000/dashboard/" + sessionStorage.getItem("role").toLowerCase() + "/users"}>Users</Link>
+                                                    <Link className="nav-link text-black fw-semibold" aria-current="page" to={"./dashboard/" + sessionStorage.getItem("role").toLowerCase() + "/users"}>Users</Link>
                                                 </li>
                                                 <li className="nav-item px-lg-2 px-md-1 px-0">
-                                                    <Link className="nav-link text-black fw-semibold" aria-current="page" to={"http://localhost:3000/dashboard/" + sessionStorage.getItem("role").toLowerCase() + "/statistics"}>Statistics</Link>
+                                                    <Link className="nav-link text-black fw-semibold" aria-current="page" to={"./dashboard/" + sessionStorage.getItem("role").toLowerCase() + "/statistics"}>Statistics</Link>
                                                 </li>
                                             </>
                                     }
                                     <li className="nav-item px-lg-2 px-md-1 px-0">
-                                        <Link className="nav-link text-black fw-semibold" aria-current="page" to={"http://localhost:3000/dashboard/" + sessionStorage.getItem("role").toLowerCase() + "/notes"}>Notes</Link>
+                                        <Link className="nav-link text-black fw-semibold" aria-current="page" to={"./dashboard/" + sessionStorage.getItem("role").toLowerCase() + "/notes"}>Notes</Link>
                                     </li>
                                     <li className="nav-item px-lg-2 px-md-1 px-0">
                                         <Link className="nav-link text-black fw-semibold" to={"/about"}>About Us</Link>

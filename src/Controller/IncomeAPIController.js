@@ -2,7 +2,7 @@
 
 export const addNewIncomeRecord = async (data) => {
     console.log("Yes !!")
-    const addIncomeAPI = await fetch(`http://localhost:5000/api/income/add`, {
+    const addIncomeAPI = await fetch(`${process.env.REACT_APP_BACKEND_URL}/income/add`, {
         method: "POST",
 
         headers: {
@@ -24,7 +24,7 @@ export const addNewIncomeRecord = async (data) => {
 
 export const deleteIncome = async (id, token) => {
 
-    const response = await fetch(`http://localhost:5000/api/income/delete/${id}`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/income/delete/${id}`, {
         method: "DELETE",
 
         headers: {
@@ -43,7 +43,7 @@ export const deleteIncome = async (id, token) => {
 
 export const editIncomeRecord = async (id, data) => {
     console.log("Yes !!")
-    const editIncomeAPI = await fetch(`http://localhost:5000/api/income/update/${id}`, {
+    const editIncomeAPI = await fetch(`${process.env.REACT_APP_BACKEND_URL}/income/update/${id}`, {
         method: "PUT",
 
         headers: {
@@ -64,7 +64,7 @@ export const editIncomeRecord = async (id, data) => {
 }
 
 export const fetchCategoryIncome = async (categoryId) => {
-    const fetchCategoryIncomes = await fetch(`http://localhost:5000/api/income/fetch/category/${categoryId}`, {
+    const fetchCategoryIncomes = await fetch(`${process.env.REACT_APP_BACKEND_URL}/income/fetch/category/${categoryId}`, {
         method: "GET",
 
         headers: {
@@ -83,7 +83,7 @@ export const fetchCategoryIncome = async (categoryId) => {
 }
 
 export const fetchAccountIncome = async (accountId) => {
-    const fetchAccountIncomes = await fetch(`http://localhost:5000/api/income/fetch/account/${accountId}`, {
+    const fetchAccountIncomes = await fetch(`${process.env.REACT_APP_BACKEND_URL}/income/fetch/account/${accountId}`, {
         method: "GET",
 
         headers: {

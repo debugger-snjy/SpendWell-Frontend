@@ -1,6 +1,6 @@
 export const fetchNotes = async () => {
     // Adding the API Call to fetch all the notes
-    const response = await fetch(`http://localhost:5000/api/notes/fetchallnotes`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/notes/fetchallnotes`, {
         method: "GET", // As fetchallnotes is a GET method
 
         headers: {
@@ -17,7 +17,7 @@ export const fetchNotes = async () => {
 }
 
 export const deleteNote = async (id) => {
-    const response = await fetch(`http://localhost:5000/api/notes/deletenote/${id}`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/notes/deletenote/${id}`, {
         method: "DELETE", // As deleteNote is a DELETE method
 
         headers: {
@@ -36,7 +36,7 @@ export const deleteNote = async (id) => {
 
 export const editNote = async (id, title, description, tags) => {
 
-    const response = await fetch(`http://localhost:5000/api/notes/updatenote/${id}`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/notes/updatenote/${id}`, {
         method: "PUT", // As editnote is a PUT method
 
         headers: {
@@ -59,7 +59,7 @@ export const addNote = async (title, description, tags) => {
         tags = "Default";
     }
 
-    const response = await fetch(`http://localhost:5000/api/notes/addnote`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/notes/addnote`, {
         method: "POST", // As fetchallnotes is a GET method
 
         headers: {
